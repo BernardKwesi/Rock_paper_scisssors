@@ -1,0 +1,102 @@
+<html>
+    <body>
+        <script>
+            let result;
+            let total;
+            function computerPlay(){
+               let list =["rock","paper","scissors"];
+               let random=list[Math.floor(Math.random() * 3)];
+               
+               return random; 
+            }
+            
+
+            function play(playSelection,computerSelection){
+                //rock beats scissors
+                //paper beats rock
+                //scissors beats paper
+                
+                playSelection=playSelection.toLowerCase();
+
+                if (playSelection ==='rock' && computerSelection ==='scissors'){
+                //    console.log('You Win.Rock beats Scissors');
+                     return total=1
+                }
+                else if(playSelection ==='rock' && computerSelection ==='paper'){
+                  //  console.log('You Lose.Paper beats rock');
+                    return total=2
+            }
+                else if(playSelection ==='scissors' && computerSelection ==='paper'){
+                    //console.log('you win.scissors  beats paper');
+                    return total=1      
+            } 
+                else if(playSelection ==='scissors' && computerSelection ==='rock'){
+                  //console.log('You lose.Rock beats Scissors');   
+                    return total=2;
+                }
+            
+                else if((playSelection ==='scissors' && computerSelection === 'scissors') 
+                ||(playSelection === 'rock' && computerSelection=== 'rock') 
+                ||(playSelection === 'paper' && computerSelection === 'paper')){
+                    //console.log('Its a draw ');
+                    return total=0;    
+                }
+                else if(playSelection === 'paper' && computerSelection === 'rock'){
+                //console.log('You win .paper beats rock');
+                return total=1;
+                } 
+                else if(playSelection =='paper' && computerSelection ==='scissors'){
+                //console.log('You Lose .Scissors beats paper');
+                return total=2
+                } 
+
+            }
+            
+          
+
+                    let player_result =0
+                    let computer_result =0
+            function game(){
+                
+                for (let i=0; i<5; i++){
+                    
+                    let play_Selection=prompt('Choose from the options to play the game. Rock,paper,scissors');
+                    let computer_Selection=computerPlay();
+                    console.log('Computer Selection -'+computer_Selection);
+                    console.log('Player Selection -'+play_Selection);
+                    
+                    play(play_Selection,computer_Selection);
+                 
+                if(total ==1){
+                    player_result=player_result+1
+              
+                }
+                else if (total ==2){
+                    computer_result=computer_result+1
+                }
+                else{
+                    console.log('Draw')
+                
+                
+                }
+                console.log("player points : "+player_result)
+                console.log('computer points :'+computer_result)
+                
+              
+                }
+                if (computer_result > player_result){
+                    console.log('Computer Wins!')
+                }    
+                else if (computer_result <player_result){
+                    console.log('Player Wins!')
+                }
+            else {
+                console.log('Draw')
+            }
+          
+            }
+            game();
+
+        </script>
+    </body>
+</html>
